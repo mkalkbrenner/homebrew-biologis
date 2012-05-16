@@ -7,4 +7,4 @@ Some formulae required by developers at https://www.biologis.com/pgs
 
 Tap the repository into your brew installation
 
-    brew tap josegonzalez/homebrew-php
+    brew tap mkalkbrenner/homebrew-biologis
