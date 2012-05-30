@@ -19,7 +19,7 @@ class ModProxyHtml < Formula
     system "mkdir", "#{libexec}"
     system "mkdir", "#{libexec}/apache2"
     system "cp", ".libs/mod_xml2enc.so", "#{libexec}/apache2/mod_xml2enc.so"
-    system "cp", ".libs/mod_xml2enc.so", "#{libexec}/apache2/mod_proxy_html.so"
+    system "cp", ".libs/mod_proxy_html.so", "#{libexec}/apache2/mod_proxy_html.so"
   end
 
   def test
