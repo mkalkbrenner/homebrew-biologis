@@ -11,6 +11,8 @@ class ModProxyHtml < Formula
   
   depends_on 'httpd' => :build
 
+  def patches; DATA; end
+
   def install
     system "/usr/local/sbin/apxs", "-c",
       "-I", "/usr/include/libxml2", "mod_xml2enc.c"
@@ -40,3 +42,38 @@ class ModProxyHtml < Formula
     EOS
   end
 end
+
+__END__
+--- a/mod_xml2enc.c	2009-10-30 16:23:30.000000000 +0100
++++ b/mod_xml2enc.c	2012-05-31 13:26:28.000000000 +0200
+@@ -40,9 +40,7 @@
+ 
+ **********************************************************************/
+ 
+-/* Version 1.0.3 - Bugfix against crash on no-content-type response
+- *                 reaching the filter function
+- */
++/* Version 1.0.4 - Bugfix - ensure EOS gets propagated correctly */
+ 
+ #if defined(WIN32)
+ #define XML2ENC_DECLARE_EXPORT
+@@ -364,6 +362,8 @@
+           apr_bucket_setaside(b, f->r->pool);
+         }
+         return APR_SUCCESS;
++      } else {
++        /* NRK not enough data to do anything.  Just get out of it */
+       }
+     }
+     if (ctx->bblen == -1) {
+@@ -402,7 +402,9 @@
+     if (APR_BUCKET_IS_METADATA(b)) {
+       if (APR_BUCKET_IS_EOS(b)) {
+         /* send remaining data */
+-        return ap_fflush(f->next, ctx->bbnext);
++        APR_BUCKET_REMOVE(b);
++        APR_BRIGADE_INSERT_TAIL(ctx->bbnext, b);
++        return ap_pass_brigade(f->next, ctx->bbnext);
+       } else if (APR_BUCKET_IS_FLUSH(b)) {
+         ap_fflush(f->next, ctx->bbnext);
+       }
