@@ -26,7 +26,7 @@ class Subversion17 < Formula
   # Building Ruby bindings requires libtool
   depends_on :libtool if build.include? 'ruby'
 
-  confilcts_with 'subversion'
+  conflicts_with 'subversion'
 
   # If building bindings, allow non-system interpreters
   env :userpaths if (build.include? 'perl') or (build.include? 'ruby')
