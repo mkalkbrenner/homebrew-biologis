@@ -5,9 +5,9 @@ require 'formula'
 
 class ModPerl < Formula
   homepage 'http://perl.apache.org/'
-  url 'http://archive.apache.org/dist/perl/mod_perl-2.0.7.tar.gz'
-  version '2.0.7'
-  sha1 '364143b2aef3c6dae69a8a2ea5d8ea2462882cd3'
+  url 'http://archive.apache.org/dist/perl/mod_perl-2.0.8.tar.gz'
+  version '2.0.8'
+  sha1 '165b1062f9680d1ccc92a88f1699797b6860c499'
 
   def install
     ENV.j1  # if your formula's build system can't parallelize
