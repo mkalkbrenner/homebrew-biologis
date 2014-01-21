@@ -5,7 +5,7 @@ require 'formula'
 
 class ModPerl < Formula
   homepage 'http://perl.apache.org/'
-  url 'http://perl.apache.org/dist/mod_perl-2.0.7.tar.gz'
+  url 'http://archive.apache.org/dist/perl/mod_perl-2.0.7.tar.gz'
   version '2.0.7'
   sha1 '364143b2aef3c6dae69a8a2ea5d8ea2462882cd3'
 
