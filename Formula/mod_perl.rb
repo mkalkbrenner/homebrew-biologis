@@ -12,7 +12,7 @@ class ModPerl < Formula
   def install
     ENV.j1  # if your formula's build system can't parallelize
 
-    system "perl", "Makefile.PL", "MP_APXS=/usr/local/sbin/apxs", "MP_CCOPTS=-std=gnu89", "DESTDIR=#{prefix}"
+    system "perl", "Makefile.PL", "MP_APXS=/usr/local/bin/apxs", "MP_CCOPTS=-std=gnu89", "DESTDIR=#{prefix}"
     system "make"
     system "make install"
   end
