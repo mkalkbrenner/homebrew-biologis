@@ -10,6 +10,7 @@ class ModPerl < Formula
   sha1 '5de3018214da21de186d758a429d5c78f827caa5'
 
   depends_on :apr => :build
+  depends_on "httpd24" => :build
 
   def install
     ENV.j1  # if your formula's build system can't parallelize
@@ -17,6 +18,8 @@ class ModPerl < Formula
     system "perl", "Makefile.PL", "MP_APXS=/usr/local/bin/apxs", "MP_APR_CONFIG=#{Formula["apr"].opt_prefix}/bin/apr-1-config", "MP_CCOPTS=-std=gnu89", "DESTDIR=#{prefix}"
     system "make"
     system "make install"
+
+    libexec.install "#{prefix}#{Formula["httpd24"].prefix}/libexec/mod_perl.so"
   end
 
   def test
