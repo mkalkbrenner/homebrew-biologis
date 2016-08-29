@@ -7,7 +7,7 @@ class Apache2Modproxyperlhtml < Formula
   homepage 'http://modproxyhtml.darold.net/'
   url 'http://search.cpan.org/CPAN/authors/id/D/DA/DAROLD/Apache2-ModProxyPerlHtml-3.4-1.tar.gz'
   version '3.4-1'
-  sha1 'fc9b389ca40a133c298b635c72e95574ea76cbfa'
+  sha256 '5f83cde648b9dd6f8e43f6e29f8a4e02a37c6956945860d7519a4145366d2524'
 
   depends_on "mod_perl"
 

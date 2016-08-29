@@ -7,7 +7,7 @@ class ModPerl < Formula
   homepage 'http://perl.apache.org/'
   url 'http://archive.apache.org/dist/perl/mod_perl-2.0.9.tar.gz'
   version '2.0.9'
-  sha1 '5de3018214da21de186d758a429d5c78f827caa5'
+  sha256 '0260f26ab771c1c95fadc67544b3400e420bb30b8a77565d2d02ad05498ef52b'
 
   depends_on :apr => :build
   depends_on "httpd24" => :build
