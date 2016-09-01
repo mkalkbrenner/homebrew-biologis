@@ -6,8 +6,8 @@ require 'formula'
 
 class Subversion17 < Formula
   homepage 'http://subversion.apache.org/'
-  url 'http://www.apache.org/dyn/closer.cgi?path=subversion/subversion-1.7.13.tar.bz2'
-  sha1 '844bb756ec505edaa12b9610832bcd21567139f1'
+  url 'http://www.apache.org/dyn/closer.cgi?path=subversion/subversion-1.7.22.tar.bz2'
+  sha256 '0790a923a536ea5459e747fb02de645f6e7da68a6b439e55160f65b81bcab3ee'
 
   option :universal
   option 'java', 'Build Java bindings'

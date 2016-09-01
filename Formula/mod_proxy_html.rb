@@ -6,7 +6,7 @@ require 'formula'
 class ModProxyHtml < Formula
   homepage 'http://apache.webthing.com/mod_proxy_html/'
   url 'http://apache.webthing.com/mod_proxy_html/mod_proxy_html.tar.bz2'
-  md5 'd6497b48d2bffc4150472472004618c3'
+  sha256 'a1aee758bda605e153868b91188ebf2c527b8eeb0f115d11af152078e65895bf'
   version '3.1.2'
   
   depends_on 'httpd' => :build
