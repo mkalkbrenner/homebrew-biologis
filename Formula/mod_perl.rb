@@ -13,7 +13,7 @@ class ModPerl < Formula
   depends_on "httpd24" => :build
 
   def install
-    ENV.j1  # if your formula's build system can't parallelize
+    ENV.deparallelize  # if your formula's build system can't parallelize
     
     system "perl", "Makefile.PL", "MP_APXS=/usr/local/bin/apxs", "MP_APR_CONFIG=#{Formula["apr"].opt_prefix}/bin/apr-1-config", "MP_CCOPTS=-std=gnu89", "DESTDIR=#{prefix}"
     system "make"

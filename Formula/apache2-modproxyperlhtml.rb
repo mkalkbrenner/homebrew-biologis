@@ -12,7 +12,7 @@ class Apache2Modproxyperlhtml < Formula
   depends_on "mod_perl"
 
   def install
-    ENV.j1  # if your formula's build system can't parallelize
+    ENV.deparallelize  # if your formula's build system can't parallelize
     ENV["PERL5LIB"] = "/usr/local/opt/mod_perl/Library/Perl/5.18/darwin-thread-multi-2level"
     
     #system "perl", "Makefile.PL", "MP_APXS=/usr/local/sbin/apxs", "DESTDIR=#{prefix}"
