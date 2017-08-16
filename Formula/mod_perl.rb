@@ -14,12 +14,14 @@ class ModPerl < Formula
 
   def install
     ENV.deparallelize  # if your formula's build system can't parallelize
-    
-    system "perl", "Makefile.PL", "MP_APXS=/usr/local/bin/apxs", "MP_APR_CONFIG=#{Formula["apr"].opt_prefix}/bin/apr-1-config", "MP_CCOPTS=-std=gnu89", "DESTDIR=#{prefix}"
+
+    ENV["HOMEBREW_INCLUDE_PATHS"]="#{Formula["apr"].opt_prefix}/libexec/include/apr-1"
+
+    system "perl", "Makefile.PL", "MP_APXS=/usr/local/bin/apxs", "MP_APR_CONFIG=#{Formula["apr"].opt_prefix}/bin/apr-1-config", "MP_CCOPTS=-std=gnu89", "-I#{Formula["apr"].opt_prefix}/libexec/include/apr-1", "DESTDIR=#{prefix}"
     system "make"
     system "make install"
 
-    libexec.install "#{prefix}/libexec/mod_perl.so"
+    libexec.install "#{prefix}/usr/local/Cellar/httpd24/#{Formula["httpd24"].version}/libexec/mod_perl.so"
   end
 
   def test
