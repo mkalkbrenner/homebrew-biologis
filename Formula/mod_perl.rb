@@ -9,7 +9,7 @@ class ModPerl < Formula
   version '2.0.9'
   sha256 '0260f26ab771c1c95fadc67544b3400e420bb30b8a77565d2d02ad05498ef52b'
 
-  depends_on :apr => :build
+  depends_on "apr-util" => :build
   depends_on "httpd24" => :build
 
   def install
