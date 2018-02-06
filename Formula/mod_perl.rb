@@ -21,7 +21,7 @@ class ModPerl < Formula
     system "make"
     system "make install"
 
-    libexec.install "#{prefix}/usr/local/Cellar/httpd24/#{Formula["httpd24"].version}/libexec/mod_perl.so"
+    libexec.install "#{prefix}/usr/local/lib/httpd/modules/mod_perl.so"
   end
 
   def test
