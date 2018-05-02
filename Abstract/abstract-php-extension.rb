@@ -177,33 +177,6 @@ EOS
   end
 end
 
-class AbstractPhp53Extension < AbstractPhpExtension
-  include AbstractPhpVersion::Php53Defs
-
-  def self.init(opts = [])
-    super()
-    depends_on "php53" => opts if build.with?("homebrew-php")
-  end
-end
-
-class AbstractPhp54Extension < AbstractPhpExtension
-  include AbstractPhpVersion::Php54Defs
-
-  def self.init(opts = [])
-    super()
-    depends_on "php54" => opts if build.with?("homebrew-php")
-  end
-end
-
-class AbstractPhp55Extension < AbstractPhpExtension
-  include AbstractPhpVersion::Php55Defs
-
-  def self.init(opts = [])
-    super()
-    depends_on "php55" => opts if build.with?("homebrew-php")
-  end
-end
-
 class AbstractPhp56Extension < AbstractPhpExtension
   include AbstractPhpVersion::Php56Defs
 
