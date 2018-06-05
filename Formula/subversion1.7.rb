@@ -21,7 +21,7 @@ class Subversion17 < Formula
   depends_on 'neon'
   depends_on 'sqlite'
   depends_on 'serf'
-  depends_on :python => :optional
+  depends_on 'python@2' => :optional
 
   # Building Ruby bindings requires libtool
   depends_on :libtool if build.include? 'ruby'
