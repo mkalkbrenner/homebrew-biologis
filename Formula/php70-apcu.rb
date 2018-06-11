@@ -8,13 +8,6 @@ class Php70Apcu < AbstractPhp70Extension
   sha256 "760fc93e9657a52429796e0cc321b400c4de608c24970395577332ef1d314747"
   head "https://github.com/krakjoe/apcu.git"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "4c4313eacbb1cb2120a1843d48945b76f2ae4b5917e4128256df71690c531805" => :sierra
-    sha256 "2ce5dc2b3ed12fc2e6cab15b04b73dbd967ae460ce70452d4a13d345ef609e23" => :el_capitan
-    sha256 "be3d5d369c944f888e643c88d9d3a2ae57b01d6bc9e0b6c8bfb1aa84a36537e3" => :yosemite
-  end
-
   depends_on "pcre"
 
   def install
